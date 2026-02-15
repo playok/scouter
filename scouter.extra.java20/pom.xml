@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.github.scouter-project</groupId>
         <artifactId>scouter-parent</artifactId>
-        <version>2.21.2</version> <!--scouter-->
+        <version>2.21.3</version> <!--scouter-->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -21,6 +21,7 @@
         <scouter.assembly.working.dir>${project.build.directory}/assembly-working</scouter.assembly.working.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <scouter.extra.java11.jarName>scouter.weaver</scouter.extra.java11.jarName>
+        <maven.compiler.release>21</maven.compiler.release>
     </properties>
 
     <dependencies>
@@ -45,6 +46,13 @@
                     <compilerVersion>21</compilerVersion>
                     <fork>true</fork>
                     <executable>${JAVA_21_HOME}/bin/javac</executable>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <javadocExecutable>${JAVA_21_HOME}/bin/javadoc</javadocExecutable>
                 </configuration>
             </plugin>
             <plugin>
